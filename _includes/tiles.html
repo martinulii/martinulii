@@ -1,20 +1,17 @@
-{% if 'posts' == site.tiles-source %}
-    {% assign tiles = site.posts %}
-{% elsif 'pages' == site.tiles-source %}
-    {% assign tiles = site.html_pages | where_exp: "item", "item.show_tile != false and item.layout != 'home'" %}
-{% endif %}
+
 <section id="one" class="tiles">
-  {% for tile in tiles limit:site.tiles-count %}
-  <article>
-    {% if tile.image %}
-    <span class="image">
-      <img src="{{ tile.image }}" alt="{{ tile.title }}" />
-    </span>
-    {% endif %}
-    <header class="major">
-      <h3><a href="{{ tile.url  | relative_url }}" class="link">{{ tile.title }}</a></h3>
-      <p>{{ tile.description }}</p>
-    </header>
-  </article>
+  {% assign tiles = site.pages | where_exp: "item", "item.show_tile != false and item.layout != 'home'" %}
+  {% for tile in tiles %}
+    <article>
+      {% if tile.tile-image %}
+      <span class="image">
+        <img src="{{ tile.tile-image | relative_url }}" alt="{{ tile.tile-title }}" />
+      </span>
+      {% endif %}
+      <header class="major">
+        <h3><a href="{{ tile.url | relative_url }}" class="link">{{ tile.tile-title }}</a></h3>
+        <p>{{ tile.tile-description }}</p>
+      </header>
+    </article>
   {% endfor %}
 </section>
