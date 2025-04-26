@@ -153,21 +153,11 @@ body {
   transition: transform 0.3s;
 }
 
-.grid-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  transition: background 0.3s;
-}
 
 .grid-item:hover {
   transform: scale(1.05);
 }
 
-.grid-item:hover::before {
-  background: rgba(0, 0, 0, 0.5);
-}
 
 /* Background images for grid items */
 .grid-item.project { background-image: url('../images/project.png'); }
