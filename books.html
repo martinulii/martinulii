@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books – Martí Losantos</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <!-- Header include -->
+  <div id="site-header"></div>
+
+  <main style="padding-top:4rem;">
+    <!-- First book block -->
+    <section class="book-detail">
+      <div class="book-container">
+        <img src="./images/book.png" alt="Book Cover" class="book-image" />
+        <div class="book-info">
+          <h2>TRENCALL</h2>
+          <p>“Trencall” narra la commovedora història d’un jove que, després d’un accident d’avió, es veu atrapat en un entorn hostil i lluny de la civilització. Sol i sense cobertura, ha de recórrer a les seves habilitats de supervivència per sobreviure, mentre fa front a la seva pròpia por i desesperació. Aquesta aventura extrema el portarà no només a enfrontar-se amb la natura, sinó també amb les seves reflexions més profundes sobre la vida, l’aïllament i la connexió amb el món. Amb un estil intens i immersiu, “Trencall” és una història que et mantindrà en tensió fins al final.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer include -->
+  <div id="site-footer"></div>
+
+  <!-- Include common header and footer -->
+  <script>
+    async function includeHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(res.statusText);
+        document.getElementById(id).innerHTML = await res.text();
+      } catch (e) {
+        console.error('Include failed:', e);
+      }
+    }
+    includeHTML('site-header', 'header.html');
+    includeHTML('site-footer', 'footer.html');
+  </script>
+</body>
+</html>
