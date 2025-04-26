@@ -7,37 +7,43 @@
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <h1>Martí Losantos</h1>
-    <nav class="site-nav">
-      <a href="#grid">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="music.html">Music</a>
-      <a href="books.html">Books</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+  <!-- Aquí s’injecta el header -->
+  <div id="site-header"></div>
 
   <main>
     <section class="hero">
       <h1>Martí Losantos</h1>
-      <p class="subtitle">Personal Portfolio</p>
-      <button class="scroll-btn" onclick="document.getElementById('grid').scrollIntoView({ behavior: 'smooth' });">Discover More</button>
+      <p class="subtitle">Creative Design, Music, and Books</p>
+      <button class="scroll-btn"
+              onclick="document.getElementById('grid').scrollIntoView({ behavior: 'smooth' });">
+        Discover More
+      </button>
     </section>
 
     <section id="grid" class="grid-sections">
       <a href="projects.html" class="grid-item project"><span>Projects</span></a>
-      <a href="music.html" class="grid-item music"><span>Music</span></a>
-      <a href="books.html" class="grid-item book"><span>Books</span></a>
-      <a href="about.html" class="grid-item about"><span>More about me</span></a>
+      <a href="music.html"   class="grid-item music"><span>Music</span></a>
+      <a href="books.html"   class="grid-item book"><span>Books</span></a>
+      <a href="about.html"   class="grid-item about"><span>More about me</span></a>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Martí Losantos. All rights reserved</p>
-    <section id="contacte" class="contact">
-      <p>Contact me at: <a href="marti.losmar@gmail.com">marti.losmar@gmail.com</a></p>
-    </section>
-  </footer>
+  <!-- Aquí s’injecta el footer -->
+  <div id="site-footer"></div>
+
+  <!-- Script per incloure header.html i footer.html -->
+  <script>
+    async function includeHTML(id, url) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(res.statusText);
+        document.getElementById(id).innerHTML = await res.text();
+      } catch (e) {
+        console.error('Include failed:', e);
+      }
+    }
+    includeHTML('site-header', 'header.html');
+    includeHTML('site-footer', 'footer.html');
+  </script>
 </body>
 </html>
