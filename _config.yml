@@ -42,3 +42,8 @@ exclude:
 - LICENSE.md
 - CONTRIBUTING.md
 - README.md 
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
