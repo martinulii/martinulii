@@ -139,24 +139,41 @@ body {
 }
 
 .grid-item {
-  height: 150px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  color: white;
+  min-height: 300px;
+  background-size: cover;
+  background-position: center;
   transition: transform 0.3s;
 }
 
-.grid-item:nth-child(1) { background-color: var(--color-cian); }
-.grid-item:nth-child(2) { background-color: var(--color-lila); }
-.grid-item:nth-child(3) { background-color: var(--color-yellow); }
-.grid-item:nth-child(4) { background-color: var(--color-pink); }
+.grid-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+}
 
 .grid-item:hover {
   transform: scale(1.05);
 }
+
+.grid-item:hover::before {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Background images for grid items */
+.grid-item.project { background-image: url('../images/project.png'); }
+.grid-item.music   { background-image: url('../images/music.jpg'); }
+.grid-item.book    { background-image: url('../images/book.png'); }
+.grid-item.about   { background-image: url('../images/about.jpeg'); }
 
 /* Footer */
 .site-footer {
