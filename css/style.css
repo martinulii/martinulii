@@ -140,7 +140,6 @@ body {
 
 .grid-item {
   position: relative;
-  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,17 +157,9 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px);
-  transition: filter 0.3s;
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
 }
-
-.grid-item.project::before { background-image: url('../images/project.png'); }
-.grid-item.music::before   { background-image: url('../images/music.jpg'); }
-.grid-item.book::before    { background-image: url('../images/book.png'); }
-.grid-item.about::before   { background-image: url('../images/about.jpeg'); }
 
 .grid-item:hover {
   transform: scale(1.05);
@@ -177,6 +168,12 @@ body {
 .grid-item:hover::before {
   background: rgba(0, 0, 0, 0.5);
 }
+
+/* Background images for grid items */
+.grid-item.project { background-image: url('../images/project.png'); }
+.grid-item.music   { background-image: url('../images/music.jpg'); }
+.grid-item.book    { background-image: url('../images/book.png'); }
+.grid-item.about   { background-image: url('../images/about.jpeg'); }
 
 /* Footer */
 .site-footer {
