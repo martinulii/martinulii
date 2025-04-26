@@ -60,6 +60,7 @@
   /* Seccions */
   .hero {
     position: relative;
+    overflow: hidden;
     min-height: 60vh;
     background-image: url('../images/hero.jpg');
     background-size: cover;
@@ -77,6 +78,7 @@
     height: 100%;
     background: rgba(0,0,0,0.4);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
   .hero h2 {
     position: relative;
