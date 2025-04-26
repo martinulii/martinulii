@@ -1,0 +1,49 @@
+/* Hover effect for tiles */
+.tiles article {
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tiles article:hover {
+	transform: translateY(-5px) scale(1.02);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Centrar el contingut principal */
+  .centered-content {
+	max-width: 900px;
+	margin: 0 auto;
+	text-align: center;
+  }
+  
+  /* Grid per a projectes */
+  .projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2em;
+	margin-top: 2em;
+	justify-items: center;
+  }
+  
+  /* Estil de cada capsa de projecte */
+  .project-box {
+	background: #f9f9f9;
+	padding: 1.5em;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Efecte hover a les capses */
+  .project-box:hover {
+	transform: translateY(-5px) scale(1.02);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estil d'imatge dins les capses */
+  .project-box img {
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 1em;
+	border-radius: 4px;
+  }
