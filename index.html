@@ -1,43 +1,41 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>El Meu Nom – Web Personal</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <h1>El Meu Nom</h1>
-    <nav class="site-nav">
-      <a href="#sobre-mi">Sobre mi</a>
-      <a href="#projectes">Projectes</a>
-      <a href="#contacte">Contacte</a>
-    </nav>
-  </header>
+.hero {
+  background-color: var(--color-primari);
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
 
-  <main>
-    <section class="hero">
-      <h1>Martí Losantos</h1>
-      <p class="subtitle">Disseny Creatiu, Música i Llibres</p>
-      <button class="scroll-btn">Descobreix més</button>
-    </section>
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none;
+}
 
-    <section id="grid" class="grid-sections">
-      <a href="projects.html" class="grid-item">Projects</a>
-      <a href="music.html" class="grid-item">Music</a>
-      <a href="books.html" class="grid-item">Books</a>
-      <a href="about.html" class="grid-item">More about me</a>
-    </section>
+.hero h1 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+  animation: fadeInUp 1s ease-out both, pulse 3s ease-in-out 2s infinite;
+}
 
-    <section id="contacte" class="contact">
-      <h2>Contacte</h2>
-      <p>Si vols posar-te en contacte amb mi: <a href="mailto:tucorreo@exemple.com">tucorreo@exemple.com</a></p>
-    </section>
-  </main>
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  <footer class="site-footer">
-    <p>&copy; 2025 El Meu Nom. Tots els drets reservats.</p>
-  </footer>
-</body>
-</html>
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
