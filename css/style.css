@@ -70,7 +70,6 @@ html {
     position: relative;
     overflow: hidden;
     min-height: 60vh;
-    background-color: var(--color-primari);
     background-image: url('../images/hero.jpg');
     background-size: cover;
     background-position: center;
@@ -89,7 +88,6 @@ html {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     z-index: 1;
-    pointer-events: none;
   }
   .hero h1 {
     position: relative;
@@ -97,7 +95,7 @@ html {
     color: white;
     font-family: var(--font-heading);
     font-size: 3rem;
-    animation: fadeInUp 1s ease-out both, pulse 3s ease-in-out 2s infinite;
+    animation: fadeInUp 1s ease-out;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
   }
   .hero .subtitle {
@@ -200,9 +198,4 @@ html {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
 }
