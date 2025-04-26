@@ -1,0 +1,97 @@
+/* css/style.css */
+
+/* Variables de colors i tipografia */
+:root {
+    --color-fons: #f9f9f9;
+    --color-primari: #2c3e50;
+    --color-segona: #18bc9c;
+    --color-text: #333;
+    --font-heading: 'Segoe UI', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-fons);
+    line-height: 1.6;
+  }
+  
+  /* Header */
+  .site-header {
+    background-color: var(--color-primari);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .site-header h1 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+  }
+  
+  .site-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: bold;
+  }
+  
+  .site-nav a:hover {
+    color: var(--color-segona);
+  }
+  
+  /* Seccions */
+  .hero {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .projects,
+  .contact {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .projects ul {
+    list-style: none;
+  }
+  
+  .projects li {
+    margin-bottom: 1.5rem;
+  }
+  
+  .projects h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Footer */
+  .site-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--color-primari);
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsiu */
+  @media (max-width: 600px) {
+    .site-header {
+      flex-direction: column;
+    }
+  
+    .site-nav a {
+      margin: 0.5rem 0;
+    }
+  }
