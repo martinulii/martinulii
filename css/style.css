@@ -165,10 +165,10 @@ body {
   z-index: 1;
 }
 
-.grid-item.project::before { background-image: url('../images/project.jpg'); }
+.grid-item.project::before { background-image: url('../images/project.png'); }
 .grid-item.music::before   { background-image: url('../images/music.jpg'); }
-.grid-item.book::before    { background-image: url('../images/book.jpg'); }
-.grid-item.about::before   { background-image: url('../images/about.jpg'); }
+.grid-item.book::before    { background-image: url('../images/book.png'); }
+.grid-item.about::before   { background-image: url('../images/about.jpeg'); }
 
 .grid-item:hover {
   transform: scale(1.05);
