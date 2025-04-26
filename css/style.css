@@ -1,45 +1,201 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Martí Losantos – Web Personal</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <h1>Martí Losantos</h1>
-    <nav class="site-nav">
-      <a href="#grid">Inici</a>
-      <a href="projects.html">Projects</a>
-      <a href="music.html">Music</a>
-      <a href="books.html">Books</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+/* css/style.css */
 
-  <main>
-    <section class="hero">
-      <h1>Martí Losantos</h1>
-      <p class="subtitle">Disseny Creatiu, Música i Llibres</p>
-      <button class="scroll-btn">Descobreix més</button>
-    </section>
+html {
+  scroll-behavior: smooth;
+}
 
-    <section id="grid" class="grid-sections">
-      <a href="projects.html" class="grid-item">Projects</a>
-      <a href="music.html" class="grid-item">Music</a>
-      <a href="books.html" class="grid-item">Books</a>
-      <a href="about.html" class="grid-item">More about me</a>
-    </section>
+/* Variables de colors i tipografia */
+:root {
+    --color-fons: #f9f9f9;
+    --color-primari: #2c3e50;
+    --color-segona: #18bc9c;
+    --color-text: #333;
+    --font-heading: 'Segoe UI', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --color-cian: #1abc9c;
+    --color-lila: #9b59b6;
+    --color-yellow: #f1c40f;
+    --color-pink: #ff6b81;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-fons);
+    line-height: 1.6;
+  }
+  body {
+    padding-top: 4rem;
+  }
+  
+  /* Header */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 62, 80, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .site-header h1 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+  }
+  
+  .site-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: bold;
+  }
+  
+  .site-nav a:hover {
+    color: var(--color-segona);
+  }
+  
+  /* Seccions */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1;
+  }
+  .hero h1 {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    animation: fadeInUp 1s ease-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  }
+  .hero .subtitle {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+  }
+  .scroll-btn {
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    animation: fadeInUp 1.5s ease-out;
+  }
+  .scroll-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .projects,
+  .contact {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .projects ul {
+    list-style: none;
+  }
+  
+  .projects li {
+    margin-bottom: 1.5rem;
+  }
+  
+  .projects h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Footer */
+  .site-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--color-primari);
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsiu */
+  @media (max-width: 600px) {
+    .site-header {
+      flex-direction: column;
+    }
+  
+    .site-nav a {
+      margin: 0.5rem 0;
+    }
+  }
 
-    <section id="contacte" class="contact">
-      <h2>Contacte</h2>
-      <p>Si vols posar-te en contacte amb mi: <a href="mailto:tucorreo@exemple.com">tucorreo@exemple.com</a></p>
-    </section>
-  </main>
+  /* Grid Sections */
+  .grid-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .grid-item {
+    background-color: var(--color-primari);
+    color: white;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    transition: transform 0.3s;
+  }
+  .grid-item:hover {
+    transform: scale(1.05);
+  }
+  .grid-item:nth-child(1) { background-color: var(--color-cian); }
+  .grid-item:nth-child(2) { background-color: var(--color-lila); }
+  .grid-item:nth-child(3) { background-color: var(--color-yellow); }
+  .grid-item:nth-child(4) { background-color: var(--color-pink); }
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Martí Losantos. Tots els drets reservats.</p>
-  </footer>
-</body>
-</html>
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
