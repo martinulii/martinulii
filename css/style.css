@@ -160,7 +160,7 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: blur(10px);
+  filter: blur(6px);
   transition: filter 0.3s;
   z-index: 1;
 }
