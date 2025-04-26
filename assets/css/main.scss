@@ -1,6 +1,4 @@
----
----
-@import 'libs/vars';
+@import 'libs/_vars';
 @import 'libs/functions';
 @import 'libs/mixins';
 @import 'libs/skel';
@@ -78,3 +76,13 @@
 	@import 'layout/footer';
 	@import 'layout/wrapper';
 	@import 'layout/menu';
+
+/* Hover effect for tiles */
+.tiles article {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tiles article:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
