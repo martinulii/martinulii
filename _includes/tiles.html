@@ -1,17 +1,18 @@
-
 <section id="one" class="tiles">
-  {% assign tiles = site.pages | where_exp: "item", "item.show_tile != false and item.layout != 'home'" %}
+  {% assign tiles = site.pages | where: "show_tile", true %}
   {% for tile in tiles %}
-    <article>
-      {% if tile.tile-image %}
-      <span class="image">
-        <img src="{{ tile.tile-image | relative_url }}" alt="{{ tile.tile-title }}" />
-      </span>
-      {% endif %}
-      <header class="major">
-        <h3><a href="{{ tile.url | relative_url }}" class="link">{{ tile.tile-title }}</a></h3>
-        <p>{{ tile.tile-description }}</p>
-      </header>
-    </article>
+    {% unless tile.layout == "home" %}
+      <article>
+        {% if tile.tile-image %}
+        <span class="image">
+          <img src="{{ tile.tile-image | relative_url }}" alt="{{ tile.tile-title }}" />
+        </span>
+        {% endif %}
+        <header class="major">
+          <h3><a href="{{ tile.url | relative_url }}" class="link">{{ tile.tile-title }}</a></h3>
+          <p>{{ tile.tile-description }}</p>
+        </header>
+      </article>
+    {% endunless %}
   {% endfor %}
 </section>
