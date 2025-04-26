@@ -4,7 +4,7 @@ subtitle: personal portfolio
 email: marti.losmar@gmail.com
 description: 
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: # the base hostname & protocol for your site
+url: "https://martinulii.github.io"
 author:
 street_address: 
 city: 
