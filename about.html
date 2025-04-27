@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me – Martí Losantos</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="site-header">
+    <h1>Martí Losantos</h1>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="music.html">Music</a>
+      <a href="books.html">Books</a>
+      <a href="about.html" class="active">About</a>
+    </nav>
+  </header>
+
+  <main style="padding-top: 1rem;">
+    <section id="train-map" class="train-map">
+      <!-- Canvas for Subwayjs -->
+      <canvas id="subway-canvas" resize></canvas>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2025 Martí Losantos
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/paper@0.12.15/dist/paper-full.min.js"></script>
+  <script type="text/paperscript" src="./js/subway.js" canvas="subway-canvas"></script>
+  <script type="text/paperscript" canvas="subway-canvas">
+    </script>
+</body>
+</html>
