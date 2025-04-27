@@ -355,3 +355,79 @@ html, body {
   padding: 2rem;
   border-radius: 8px;
 }
+
+.projects-page::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #b7f6f7;
+  filter: blur(15px);
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+/* Spline background section */
+.spline-background {
+  position: relative;
+  width: 100%;
+  height: 700px; /* ajusta l'altura si cal */
+  overflow: hidden;
+  margin-top: 2rem;
+}
+spline-viewer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Side-by-side layout for book and 3D model */
+.books-layout {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.books-layout .books-panel {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.books-layout .model-panel spline-viewer {
+  position: relative;
+  z-index: auto;
+  flex: 1;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.books-layout .detail-panel .book-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.books-layout .model-panel spline-viewer {
+  position: relative;
+  z-index: auto;
+  flex: 1 1 auto;
+  width: 100%;
+  max-height: 100%;
+}
+
+.books-layout::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('../images/book.png') center/cover no-repeat fixed;
+  filter: blur(15px);
+  transform: scale(1.1);
+  z-index: -1;
+}
