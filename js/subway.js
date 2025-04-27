@@ -195,10 +195,10 @@ function onFrame(event) {
 //function SingleNode(line, position, neighbours, name, url, name_offset, name_angle)
 
 // Línies
-EducationLine = new Line('#ababab', 'Education');
-MusicLine     = new Line('#b3d529', 'Music');
+EducationLine = new Line('#fc7600', 'Education');
+MusicLine     = new Line('#0dfc00', 'Music');
 YoutubeLine   = new Line('#ff0000', 'Youtube');
-BookLine = new Line('#A020F0', 'Book');
+BookLine = new Line('#f5a8f7', 'Book');
 
 
 Timeline      = new DashLine('#000000', 'Timeline');
@@ -215,9 +215,9 @@ educationEnd = new SingleNode(EducationLine, new Point(1700, 400), null, '', '',
 
 //MUSIC
 musicNode1 = new SingleNode(MusicLine,     startPoint, null, '', '', new Point(12, 20));
-musicNode2 = new SingleNode(MusicLine, new Point(200, 600), null, 'El Musical', '', new Point(0, -20), 30);
-musicNode3 = new SingleNode(MusicLine, new Point(400, 600), null, 'Particular', '', new Point(0, -20), 30);
-musicNode4 = new SingleNode(MusicLine, new Point(700, 600), null, 'Taller de Músics', '', new Point(0, -20), 30);
+musicNode2 = new SingleNode(MusicLine, new Point(200, 600), null, 'El Musical', '', new Point(20, -10), 30);
+musicNode3 = new SingleNode(MusicLine, new Point(400, 600), null, 'Particular \n Martí Hosta', '', new Point(20, -20), 30);
+musicNode4 = new SingleNode(MusicLine, new Point(700, 600), null, 'Taller de Músics', 'https://tallerdemusics.com', new Point(20, -5), 30);
 musicEnd = new SingleNode(MusicLine, new Point(1700, 600), null, '', '', new Point(0, -20), 30);
 
 //BOOK
